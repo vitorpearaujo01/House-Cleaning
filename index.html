@@ -2,339 +2,512 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css">
-    <title>Portfólio Fotográfico</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clean Spaces - Limpeza Profissional</title>
+
+    <!-- Fontes & Ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
-        /* --- ESTILOS GLOBAIS E RESET --- */
+        :root {
+            --primary-dark: #0d2c22;
+            --primary-green: #15803d;
+            --accent-green: #22c55e;
+            --light-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --mint-bg: #f0fdf4;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --radius-lg: 16px;
+            --radius-pill: 9999px;
+        }
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #d4d4d4;
-            color: #333;
-            padding-top: 70px;
-            padding-bottom: 20px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.5;
+            padding-bottom: 120px;
+            /* Espaço para a barra inferior */
         }
 
-        /* --- MENU DE NAVEGAÇÃO (DESKTOP - TOPO) --- */
-        .navbar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: transparent;
-            border: none;
-            z-index: 1000;
+        .container {
+            max-width: 480px;
+            /* Estilo mobile-first idêntico à imagem */
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .nav-links {
+        /* HEADER */
+        header {
             display: flex;
-            justify-content: space-around;
-            list-style: none;
-            max-width: 700px;
-            margin: 15px 18px;
-            background: linear-gradient(170deg, rgba(105, 105, 105, 0.918) 0%, rgb(0, 0, 0) 100%);
-            border-radius: 100px;
-            box-shadow: 4px 7px 40px #00000090,
-                inset 1px 1px 2px #ffffff,
-                inset -1px -0px 5px #8d8d8d;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
         }
 
-        .nav-links li {
-            margin: 8px 10px;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            letter-spacing: -0.5px;
         }
 
-        .nav-links button {
-            border-radius: 70px;
-            margin-top: 3px;
+        .logo-icon {
+            color: var(--primary-dark);
+        }
+
+        .menu-btn {
             background: none;
             border: none;
             cursor: pointer;
-            display: block;
-            padding: 8px 20px 5px;
-            color: #ffffff;
-            font-weight: 500;
-            font-size: 1.6rem;
+            color: var(--text-dark);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary-green);
             letter-spacing: 1px;
             text-transform: uppercase;
-            transition: color 0.3s ease, background-color 0.3s ease;
-            width: 100%;
+            margin-bottom: 12px;
         }
 
-        .nav-links button:hover,
-        .nav-links button.active {
-            color: #000000;
-            background: #ffffff;
-            box-shadow: 3px 4px 50px #888888;
+        .hero h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            line-height: 1.15;
+            margin-bottom: 16px;
         }
 
-        /* --- CONTEÚDO E PÁGINAS --- */
-        .conteudo {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        .hero p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
         }
 
-        .pagina {
-            display: none;
-        }
-
-        .pagina.active {
-            display: block;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(8px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #111;
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary-dark);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: var(--radius-pill);
+            text-decoration: none;
             font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            transition: opacity 0.2s ease;
         }
 
-        p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 20px;
+        .btn-primary:hover {
+            opacity: 0.9;
         }
 
-        .imagem-destaque {
+        .hero-image-wrapper {
+            margin-top: 24px;
+            border-radius: 24px;
+            overflow: hidden;
             width: 100%;
-            height: 380px;
-            background-color: #eee;
-            border: 2px dashed #ccc;
+            height: 280px;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* TRUST BADGES BAR */
+        .trust-bar {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 16px;
+            margin: 24px 0 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .trust-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: var(--mint-bg);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #777;
-            margin-top: 30px;
-            border-radius: 6px;
+            color: var(--primary-green);
         }
 
-        /* --- PÁGINA DE SERVIÇOS --- */
-        .grid-servicos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+        .trust-item span {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.2;
         }
 
-        .card-servico {
-            background: #fff;
-            padding: 35px 25px;
-            border-radius: 6px;
-            border: 1px solid #eee;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card-servico:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-        }
-
-        .card-servico h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
-            color: #111;
-        }
-
-        /* --- PÁGINA DE CONTATO --- */
-        .contato-flex {
-            display: flex;
-            gap: 50px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .info-contato,
-        .formulario {
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .info-contato h3 {
+        /* SERVICES SECTION */
+        .section-title {
             margin-bottom: 20px;
-            font-size: 1.4rem;
         }
 
-        .campo {
-            margin-bottom: 18px;
+        .section-title h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
         }
 
-        .campo label {
-            display: block;
-            margin-bottom: 6px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #333;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 40px;
         }
 
-        .campo input,
-        .campo textarea {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-            background-color: #fff;
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 20px 16px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid var(--border-color);
         }
 
-        .campo input:focus,
-        .campo textarea:focus {
-            outline: none;
-            border-color: #111;
+        .service-icon {
+            color: var(--primary-green);
         }
 
-        .btn-enviar {
-            background-color: #111;
-            color: #fff;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+        .service-card span {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.2;
+        }
+
+        /* HOW IT WORKS */
+        .how-it-works {
+            margin-bottom: 40px;
+        }
+
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-top: 24px;
+            position: relative;
+        }
+
+        .step-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 28px;
+            height: 28px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+        }
+
+        .step-icon-box {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background-color: var(--mint-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+            margin-bottom: 12px;
+        }
+
+        .step-item h3 {
             font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            width: 100%;
-            font-weight: 600;
-            transition: background-color 0.3s;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
         }
 
-        .btn-enviar:hover {
-            background-color: #333;
+        .step-item p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* BOTTOM CTA BANNER (FIXED) */
+        .bottom-cta {
+            position: fixed;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 32px);
+            max-width: 440px;
+            background-color: var(--primary-dark);
+            border-radius: 24px;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+
+        .bottom-cta h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .bottom-cta p {
+            font-size: 0.8rem;
+            color: #a7f3d0;
+            margin-bottom: 16px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-call {
+            flex: 1;
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: var(--radius-pill);
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+
+        .btn-whatsapp {
+            flex: 1;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px;
+            border-radius: var(--radius-pill);
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+
+        /* Media query para desktop */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 900px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .steps-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .bottom-cta {
+                max-width: 860px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Menu de Navegação -->
-    <nav class="navbar">
-        <ul class="nav-links">
-            <li><button class="nav-btn active" onclick="mostrarPagina('inicio', this)"><i
-                        class="fi fi-sr-house-chimney"></i></button></li>
-            <li><button class="nav-btn" onclick="mostrarPagina('servicos', this)"><i
-                        class="fi fi-sr-vacuum"></i></button></li>
-            <li><button class="nav-btn" onclick="mostrarPagina('contato', this)"><i
-                        class="fi fi-sr-messages"></i></button></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i data-lucide="building-2" class="logo-icon"></i>
+                <span>CLEAN SPACES</span>
+            </div>
+            <button class="menu-btn" aria-label="Menu">
+                <i data-lucide="menu" size="28"></i>
+            </button>
+        </header>
 
-    <!-- Conteúdo Principal do Site -->
-    <main class="conteudo">
-
-        <!-- PÁGINA 1: INÍCIO E SOBRE -->
-        <section id="inicio" class="pagina active">
-            <h1>Capturando a Natureza e a Luz</h1>
-            <p>Bem-vindo à minha plataforma digital. Este é um espaço pessoal focado em exibir meu trabalho fotográfico
-                com alto nível de qualidade e acabamento profissional.</p>
-            <p>Especializado em fotografia de natureza, controle manual de exposição e estética analógica. Sinta-se à
-                vontade para explorar os serviços prestados ou entrar em contato direto.</p>
-
-            <div class="imagem-destaque">
-                <p>📸 [ Espaço reservado para sua fotografia de destaque ]</p>
+        <!-- Hero Section -->
+        <section class="hero">
+            <span class="badge">PROFESSIONAL & RELIABLE</span>
+            <h1>Commercial Cleaning You Can Trust</h1>
+            <p>We keep your offices and buildings clean, safe and ready for success.</p>
+            <a href="#quote" class="btn-primary">
+                GET A FREE QUOTE <i data-lucide="arrow-right" size="18"></i>
+            </a>
+            <div class="hero-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80"
+                    alt="Profissional de Limpeza" />
             </div>
         </section>
 
-        <!-- PÁGINA 2: SERVIÇOS -->
-        <section id="servicos" class="pagina">
-            <h1>Serviços Oferecidos</h1>
-            <p>Confira as soluções visuais e projetos fotográficos em que posso colaborar:</p>
+        <!-- Trust Badges Bar -->
+        <section class="trust-bar">
+            <div class="trust-item">
+                <div class="trust-icon-box"><i data-lucide="shield-check" size="20"></i></div>
+                <span>Fully Insured</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon-box"><i data-lucide="users" size="20"></i></div>
+                <span>Professional Staff</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon-box"><i data-lucide="calendar" size="20"></i></div>
+                <span>Flexible Scheduling</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon-box"><i data-lucide="leaf" size="20"></i></div>
+                <span>Eco-Friendly Products</span>
+            </div>
+        </section>
 
-            <div class="grid-servicos">
-                <div class="card-servico">
-                    <h3>Fotografia de Natureza</h3>
-                    <p>Ensaios em ambientes externos com aproveitamento de luz natural e enquadramentos de paisagem em
-                        alta resolução.</p>
+        <!-- Services Grid -->
+        <section class="services">
+            <div class="section-title">
+                <span class="badge">OUR SERVICES</span>
+                <h2>Complete Cleaning Solutions</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <i data-lucide="building-2" class="service-icon" size="32"></i>
+                    <span>Office Cleaning</span>
                 </div>
-
-                <div class="card-servico">
-                    <h3>Fotografia Analógica</h3>
-                    <p>Sessões com filme fotográfico, revelação dedicada e estética clássica para projetos autorais e
-                        editoriais.</p>
+                <div class="service-card">
+                    <i data-lucide="building" class="service-icon" size="32"></i>
+                    <span>Commercial Buildings</span>
                 </div>
-
-                <div class="card-servico">
-                    <h3>Licenciamento de Imagens</h3>
-                    <p>Disponibilização de fotos exclusivas para galerias de arte, decoração de ambientes ou quadros
-                        impressos.</p>
+                <div class="service-card">
+                    <i data-lucide="sparkles" class="service-icon" size="32"></i>
+                    <span>Floor Cleaning</span>
+                </div>
+                <div class="service-card">
+                    <i data-lucide="square-slash" class="service-icon" size="32"></i>
+                    <span>Window Cleaning</span>
+                </div>
+                <div class="service-card">
+                    <i data-lucide="bath" class="service-icon" size="32"></i>
+                    <span>Restroom Sanitization</span>
+                </div>
+                <div class="service-card">
+                    <i data-lucide="box" class="service-icon" size="32"></i>
+                    <span>Move-In / Move-Out</span>
+                </div>
+                <div class="service-card">
+                    <i data-lucide="trash-2" class="service-icon" size="32"></i>
+                    <span>Trash Removal</span>
+                </div>
+                <div class="service-card">
+                    <i data-lucide="cross" class="service-icon" size="32"></i>
+                    <span>Medical Offices</span>
                 </div>
             </div>
         </section>
 
-        <!-- PÁGINA 3: CONTATO -->
-        <section id="contato" class="pagina">
-            <h1>Entre em Contacto</h1>
-            <p>Quer trocar uma ideia, solicitar um orçamento ou adquirir uma licença de imagem?</p>
+        <!-- How It Works -->
+        <section class="how-it-works">
+            <div class="section-title">
+                <span class="badge">HOW IT WORKS</span>
+                <h2>Simple. Fast. Effective.</h2>
+            </div>
 
-            <div class="contato-flex">
-                <div class="info-contato">
-                    <h3>Informações</h3>
-                    <p><strong>E-mail:</strong> ola@myphotofolios.com</p>
-                    <p><strong>Redes Sociais:</strong> @seu_perfil</p>
-                    <p><strong>Atendimento:</strong> Presencial e Online</p>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-icon-box"><i data-lucide="clipboard-edit" size="24"></i></div>
+                    <h3>Request a Quote</h3>
+                    <p>Tell us about your needs.</p>
                 </div>
 
-                <form class="formulario" onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
-                    <div class="campo">
-                        <label for="nome">Nome</label>
-                        <input type="text" id="nome" placeholder="Seu nome completo" required>
-                    </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-icon-box"><i data-lucide="calendar-check" size="24"></i></div>
+                    <h3>Schedule a Visit</h3>
+                    <p>We plan the best solution for you.</p>
+                </div>
 
-                    <div class="campo">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" placeholder="seu@email.com" required>
-                    </div>
-
-                    <div class="campo">
-                        <label for="mensagem">Mensagem</label>
-                        <textarea id="mensagem" rows="4" placeholder="Escreva sua mensagem aqui..." required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-enviar">Enviar Mensagem</button>
-                </form>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-icon-box"><i data-lucide="sparkle" size="24"></i></div>
+                    <h3>Enjoy a Clean Workplace</h3>
+                    <p>We get the job done right.</p>
+                </div>
             </div>
         </section>
+    </div>
 
-    </main>
+    <!-- Bottom Floating Call-to-Action -->
+    <div class="bottom-cta">
+        <h3>Ready for a Cleaner Workplace?</h3>
+        <p>Let's make your space shine.</p>
+        <div class="cta-buttons">
+            <a href="tel:+55000000000" class="btn-call">
+                <i data-lucide="phone" size="16"></i> Call Us
+            </a>
+            <a href="https://wa.me/" target="_blank" class="btn-whatsapp">
+                <i data-lucide="message-circle" size="16"></i> WhatsApp
+            </a>
+        </div>
+    </div>
 
-    <!-- Script para Alternar as Páginas sem recarregar -->
+    <!-- Renderizar ícones -->
     <script>
-        function mostrarPagina(idPagina, elementoBotao) {
-            // Oculta todas as páginas
-            const paginas = document.querySelectorAll('.pagina');
-            paginas.forEach(pag => pag.classList.remove('active'));
-
-            // Remove o estado ativo dos botões
-            const botoes = document.querySelectorAll('.nav-btn');
-            botoes.forEach(btn => btn.classList.remove('active'));
-
-            // Exibe a página clicada e ativa o botão
-            document.getElementById(idPagina).classList.add('active');
-            elementoBotao.classList.add('active');
-
-            // Rola suavemente para o topo ao trocar de aba
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        lucide.createIcons();
     </script>
 </body>
 
