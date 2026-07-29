@@ -319,7 +319,7 @@
 
         .bottom-cta p {
             font-size: 0.8rem;
-            color: #a7f3d0;
+            color: var(--primary-green);
             margin-bottom: 16px;
         }
 
@@ -332,30 +332,36 @@
             flex: 1;
             background-color: var(--primary-green);
             color: white;
-            border: none;
-            padding: 12px;
+            border: 1px solid white;
+            box-shadow: 0 7px 20px #00000040,
+                inset 0 0 4px #00000080;
+            padding: 10px;
             border-radius: var(--radius-pill);
-            font-weight: 700;
-            font-size: 0.85rem;
+            font-weight: 400;
+            font-size: 1rem;
+            text-shadow: 0 0 8px #ffffff70;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-around;
             gap: 6px;
             text-decoration: none;
         }
 
         .btn-whatsapp {
             flex: 1;
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background-color: #4E6813;
             color: white;
-            padding: 12px;
+            border: 1px solid white;
+            box-shadow: 0 7px 20px #00000040,
+                inset 0 0 4px #00000080;
+            padding: 10px;
             border-radius: var(--radius-pill);
-            font-weight: 700;
-            font-size: 0.85rem;
+            font-weight: 400;
+            font-size: 1rem;
+            text-shadow: 0 0 8px #ffffff70;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-around;
             gap: 6px;
             text-decoration: none;
         }
@@ -509,10 +515,10 @@
         <p>Let's make your space shine.</p>
         <div class="cta-buttons">
             <a href="tel:+55000000000" class="btn-call">
-                <i data-lucide="phone" size="16"></i> Call Us
+                Call Us <i data-lucide="phone" size="16"></i>
             </a>
             <a href="https://wa.me/" target="_blank" class="btn-whatsapp">
-                <i data-lucide="message-circle" size="16"></i> WhatsApp
+                WhatsApp <i data-lucide="message-circle" size="16"></i>
             </a>
         </div>
     </div>
