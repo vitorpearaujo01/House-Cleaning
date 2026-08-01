@@ -325,42 +325,22 @@
 
         .cta-buttons {
             display: flex;
-            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
         }
 
-        .btn-call {
-            flex: 1;
-            background: linear-gradient(180deg, #eefeff, #beeaff);
-            color: var(--primary-dark);
-            border: 1px solid white;
-            box-shadow: 7px 7px 15px #00000020;
-            padding: 10px;
-            border-radius: var(--radius-pill);
-            font-weight: 400;
-            font-size: 1rem;
-            text-shadow: 0 0 8px #ffffff70;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            gap: 6px;
-            text-decoration: none;
-        }
 
         .btn-whatsapp {
-            flex: 1;
-            background: linear-gradient(180deg, #f3ffee, #beffc9);
-            color: var(--primary-dark);
-            border: 1px solid white;
-            box-shadow: 7px 7px 15px #00000020;
-            padding: 10px;
+            color: #ffffff;
+            background: linear-gradient(180deg, #ffffff98, #88e29bbd);
             border-radius: var(--radius-pill);
-            font-weight: 400;
-            font-size: 1rem;
-            text-shadow: 0 0 8px #ffffff70;
             display: flex;
             align-items: center;
-            justify-content: space-around;
-            gap: 6px;
+            padding: 9px 30px;
+            box-shadow: 0 0 10px #fcfcfc9f,
+                inset 0 -1px 1px #0000006b,
+                inset 2px 2px 2px #ffffffad;
             text-decoration: none;
         }
 
@@ -512,12 +492,7 @@
         <h3>Ready for a Cleaner Workplace?</h3>
         <p>Let's make your space shine.</p>
         <div class="cta-buttons">
-            <a href="tel:+55000000000" class="btn-call">
-                Call Us <i data-lucide="phone" size="16"></i>
-            </a>
-            <a href="https://wa.me/" target="_blank" class="btn-whatsapp">
-                WhatsApp <i data-lucide="message-circle" size="16"></i>
-            </a>
+            <a href="https://wa.me/" target="_blank" class="btn-whatsapp"> Send a message </a>
         </div>
     </div>
 
